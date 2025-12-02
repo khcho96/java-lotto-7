@@ -38,4 +38,8 @@ public class PurchaseAmount {
     public int getLottoCount() {
         return purchaseAmount / PURCHASE_AMOUNT_UNIT;
     }
+
+    public int getPurchaseAmount() {
+        return purchaseAmount;
+    }
 }

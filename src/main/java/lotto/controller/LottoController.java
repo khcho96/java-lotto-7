@@ -23,8 +23,8 @@ public class LottoController {
         registerWinningNumber(); // 내부 작업만 수행하는 메서드 호출
         registerBonusNumber();
 
-        /*LottoResultDto lottoResultDto = getLottoResult(); // 결과 반환 메서드 호출
-        OutputView.printLottoResult(lottoResultDto); // 결과 출력*/
+        LottoResultDto lottoResultDto = getLottoResult(); // 결과 반환 메서드 호출
+        OutputView.printLottoResult(lottoResultDto); // 결과 출력
     }
 
     private LottoDto issueLotto() {
@@ -71,7 +71,7 @@ public class LottoController {
     private LottoResultDto getLottoResult() {
         while (true) {
             try {
-
+                return lottoService.calculateLottoResult();
             } catch (IllegalArgumentException e) {
                 OutputView.printErrorMessage(e);
             }

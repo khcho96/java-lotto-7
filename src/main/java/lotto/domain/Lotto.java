@@ -54,4 +54,14 @@ public class Lotto {
     public List<Integer> getNumbers() {
         return new ArrayList<>(numbers);
     }
+
+    public int calculateMatchedCount(Lotto lotto) {
+        List<Integer> numbers = new ArrayList<>(this.numbers);
+        numbers.retainAll(lotto.numbers);
+        return numbers.size();
+    }
+
+    public boolean contains(int bonusNumber) {
+        return numbers.contains(bonusNumber);
+    }
 }

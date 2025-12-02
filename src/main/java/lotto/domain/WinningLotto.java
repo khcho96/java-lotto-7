@@ -21,4 +21,11 @@ public class WinningLotto {
     public void registerBonusNumber(int bonusNumber) {
         this.bonusNumber = bonusNumber;
     }
+
+    public Rank judgeRank(Lotto lotto) {
+        int matchedCount = winningNumber.calculateMatchedCount(lotto);
+        boolean isMatchedBonusNumber = lotto.contains(bonusNumber);
+
+        return Rank.of(matchedCount, isMatchedBonusNumber);
+    }
 }

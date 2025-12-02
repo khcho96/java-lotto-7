@@ -28,4 +28,8 @@ public class IssuedLotto {
         }
         return LottoDto.from(lottoNumbers);
     }
+
+    public List<Lotto> getLottos() {
+        return lottos;
+    }
 }

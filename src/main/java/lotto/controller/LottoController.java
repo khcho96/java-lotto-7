@@ -55,7 +55,17 @@ public class LottoController {
     }
 
     private void registerBonusNumber() {
+        while (true) {
+            try {
+                String rawBonusNumber = InputView.readBonusNumber();
+                int bonusNumber = InputParser.parseToInteger(rawBonusNumber);
+                lottoService.registerBonusNumber(bonusNumber);
 
+                return;
+            } catch (IllegalArgumentException e) {
+                OutputView.printErrorMessage(e);
+            }
+        }
     }
 
     private LottoResultDto getLottoResult() {

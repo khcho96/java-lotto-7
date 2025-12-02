@@ -29,6 +29,10 @@ public class LottoService {
         winningLotto.registerWinningNumber(winningNumber);
     }
 
+    public void registerBonusNumber(int bonusNumber) {
+        winningLotto.registerBonusNumber(bonusNumber);
+    }
+
     // 촤종 결과 생성 메서드
 //    public LottoResultDto getXxxResult() {
 //        LottoResult lottoResult = LottoResult.newInstance();

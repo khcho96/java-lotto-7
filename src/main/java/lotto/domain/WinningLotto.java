@@ -17,4 +17,8 @@ public class WinningLotto {
     public void registerWinningNumber(List<Integer> winningNumber) {
         this.winningNumber = Lotto.from(winningNumber);
     }
+
+    public void registerBonusNumber(int bonusNumber) {
+        this.bonusNumber = bonusNumber;
+    }
 }

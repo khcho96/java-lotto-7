@@ -34,4 +34,8 @@ public class PurchaseAmount {
             throw new IllegalArgumentException(PURCHASE_AMOUNT_RANGE_ERROR.getErrorMessage());
         }
     }
+
+    public int getLottoCount() {
+        return purchaseAmount / PURCHASE_AMOUNT_UNIT;
+    }
 }

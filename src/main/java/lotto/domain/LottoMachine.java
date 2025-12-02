@@ -5,6 +5,13 @@ import lotto.generator.RandomLottoGenerator;
 
 public class LottoMachine {
 
+    private LottoMachine() {
+    }
+
+    public static LottoMachine newInstance() {
+        return new LottoMachine();
+    }
+
     public IssuedLotto issueLotto(PurchaseAmount purchaseAmount) {
         int lottoCount = purchaseAmount.getLottoCount();
         IssuedLotto issuedLotto = IssuedLotto.newInstance();

@@ -1,8 +1,10 @@
 package lotto.service;
 
+import java.util.List;
 import lotto.domain.IssuedLotto;
 import lotto.domain.LottoMachine;
 import lotto.domain.PurchaseAmount;
+import lotto.domain.WinningLotto;
 import lotto.dto.LottoDto;
 import lotto.dto.LottoResultDto;
 
@@ -12,6 +14,7 @@ public class LottoService {
     private PurchaseAmount purchaseAmount;
     private LottoMachine lottoMachine;
     private IssuedLotto issuedLotto;
+    private WinningLotto winningLotto;
 
     // DTO 반환 메서드
     public LottoDto issueLotto(Integer purchaseAmount) {
@@ -21,15 +24,15 @@ public class LottoService {
         return issuedLotto.getDto();
     }
 
-    // 내부 작업만 하는 메서드
-    /*public void method2(입력값 매개변수) {
-        // TODO: 정적 팩토리 메서드 호출로 도메인 객체 생성
+    public void registerWinningNumber(List<Integer> winningNumber) {
+        winningLotto = WinningLotto.newInstance();
+        winningLotto.registerWinningNumber(winningNumber);
     }
 
     // 촤종 결과 생성 메서드
-    public LottoResultDto getXxxResult() {
-        LottoResult lottoResult = LottoResult.newInstance();
-
-        return LottoResult.getLottoResult(필요한 매개변수);
-    }*/
+//    public LottoResultDto getXxxResult() {
+//        LottoResult lottoResult = LottoResult.newInstance();
+//
+//        return LottoResult.getLottoResult(필요한 매개변수);
+//    }
 }

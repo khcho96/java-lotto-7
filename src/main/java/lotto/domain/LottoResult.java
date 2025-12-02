@@ -48,6 +48,6 @@ public class LottoResult {
             Long prize = rank.getPrize();
             sum += prize * count;
         }
-        profitRate = (double) sum / purchaseAmount.getPurchaseAmount();
+        profitRate = (double) sum / purchaseAmount.getPurchaseAmount() * 100.0;
     }
 }
